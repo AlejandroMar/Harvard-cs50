@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+    <h2 class="mb-4">History</h2>
+   <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Bought</th>
+                <th>Sold</th>
+                <th>Buying price</th>
+                <th>Sale price</th>
+                <th>Shares</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for item in history_table %}
+                <tr>
+                    <td>{{ item["symbol"] }}</td>
+                    <td>{{ item["share"] }}</td>
+                    <td>{{ item["bought"] }}</td>
+                    <td>{{ item["sold"] }}</td>
+                    <td>{{ item["buying_price"]}}</td>
+                    <td>{{ item["sale_price"]}}</td>
+                    <td>{{ item["num_shares"]}}</td>
+                    <td>{{ item["date"]}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
